@@ -1,1 +1,36 @@
 <!-- Your code here -->
+<html><!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+Hello, <%= @name%>!
+
+
+
+<% if not @w.nil? %>
+	<h1><%= @w[:city] %></h1>
+	<p>
+		It's <%= @temp%>°F
+		and it looks like <%= @w[:description] %>
+	</p>
+<% end %>
+
+<%= form_with local: true, method: "get" do |form| %>
+  <%= form.text_field :city %>
+
+  <%= form.submit %>
+<% end %>
+
+<% City.all.each do |c| %>
+<% if not c.nil? %>
+	<h1> <%= c.name %></h1>
+	<p>
+		It's <%= c.temperature %>°F
+		and it looks like <%= c.description %>
+	</p>
+<% end %>
+<% end %>
+</body>
+</html>

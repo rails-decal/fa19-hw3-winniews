@@ -1,0 +1,28 @@
+<!-- Your code here -->
+<html><!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<% @cities.each do |city| %>
+	<!-- In between these two ruby tags, put your code for displaying a city! -->
+	<% if not city.nil? %>
+		<p> <%= city[1].name %> </p>
+		<p> <%= city[1].weather %></p>
+		<p> <%= city[1].population %></p>
+	<% else %>
+	
+ 
+	<% end %>
+
+	<% end %>
+
+<%= link_to "Create new city", new_city_path %>
+
+
+
+</body>
+</html>
